@@ -10,11 +10,11 @@ func main() {
 	content := "Hello from Go!"
 	file, err := os.Create("./fromString.txt")
 	checkError(err)
+	defer file.Close()
 	length, err := io.WriteString(file, content)
 	checkError(err)
 	fmt.Printf("Wrote a file with %v characters\n", length)
-	defer file.Close()
-	defer readFile("./fromString.txt")
+	readFile("./fromString.txt")
 }
 
 func readFile(fileName string) {
