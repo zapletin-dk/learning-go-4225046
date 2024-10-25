@@ -12,7 +12,13 @@ func main() {
 	floatSum := f1 + f2 + f3
 	fmt.Println("Float sum:", floatSum)
 
-	total := float64(i1) + f1
-	fmt.Println("Mixed sum:", total)
+	total := float64(i1) + f2
+	fmt.Println("Total:", total)
+
+	quotient := float64(i1) / f2
+	fmt.Println("Quotient:", quotient)
+
+	product := float64(i1) * f2
+	fmt.Println("Product:", product)
 
 }
