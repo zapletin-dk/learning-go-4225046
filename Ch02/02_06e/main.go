@@ -7,14 +7,18 @@ import (
 
 func main() {
 
-	n := time.Now()
-	fmt.Println("I recorded this video at ", n)
-
 	t := time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC)
-	fmt.Println("Go launched at ", t)
-	fmt.Println(t.Format(time.ANSIC))
+	fmt.Printf("Go launched at %s\n", t)
 
-	parsedTime, _ := time.Parse(time.ANSIC, "Tue Nov 10 23:00:00 2009")
-	fmt.Printf("The type of parsedTime is %T\n", parsedTime)
+	n := time.Now()
+	fmt.Printf("The time currently is %s\n", n)
+	fmt.Printf("This object's type is %T\n", n)
 
+	fmt.Printf(n.Format(time.ANSIC) + "\n")
+
+	tomorrow := n.AddDate(0, 0, 1)
+	fmt.Printf(tomorrow.Format(time.ANSIC) + "\n")
+
+	format := "Mon 2006-02-01"
+	fmt.Printf(tomorrow.Format(format) + "\n")
 }
