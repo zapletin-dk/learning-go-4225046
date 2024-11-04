@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Structs")
+	fmt.Println("Slices")
 }
