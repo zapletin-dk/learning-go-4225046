@@ -5,5 +5,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Slices")
+	// This is an array
+	var colors = [3]string{"Red", "Green", "Blue"}
+	fmt.Println(colors)
 }
