@@ -7,16 +7,17 @@ import (
 
 func main() {
 	states := make(map[string]string)
-	fmt.Println(states)
 	states["WA"] = "Washington"
 	states["OR"] = "Oregon"
 	states["CA"] = "California"
 	fmt.Println(states)
-
+	
 	california := states["CA"]
 	fmt.Println(california)
-
+	
 	delete(states, "OR")
+	fmt.Println(states)
+	
 	states["NY"] = "New York"
 	fmt.Println(states)
 
@@ -30,12 +31,10 @@ func main() {
 		keys[i] = k
 		i++
 	}
-	fmt.Println(keys)
 	sort.Strings(keys)
-	fmt.Println(keys)
+	fmt.Println("\nSorted")
 
 	for i := range keys {
 		fmt.Println(states[keys[i]])
 	}
-
 }
