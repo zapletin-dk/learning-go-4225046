@@ -2,17 +2,29 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"io"
+	"os"
 )
 
 func main() {
-	go say("Hello from the Goroutine", 1)
-	println("Hello from Main")
-	time.Sleep(2 * time.Second)
-	println("All done")
+	content := "Hello from Go!"
+	file, err := os.Create("./fromString.txt")
+	checkError(err)
+	defer file.Close()
+	length, err := io.WriteString(file, content)
+	checkError(err)
+	fmt.Printf("Wrote a file with %v characters\n", length)
+	readFile("./fromString.txt")
 }
 
-func say(message string) {
-	time.Sleep(1 * time.Second)
-	fmt.Println(message)
+func readFile(fileName string) {
+	data, err := os.ReadFile(fileName)
+	checkError(err)
+	fmt.Println("Text read from file:", string(data))
+}
+
+func checkError(err error) {
+	if err != nil {
+		panic(err)
+	}
 }

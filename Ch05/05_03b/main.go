@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Files")
+	fmt.Println("Hello from Go!")
 }

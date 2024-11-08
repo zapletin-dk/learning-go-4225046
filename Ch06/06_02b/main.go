@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+const url = "http://services.explorecalifornia.org/json/tours.php"
+
 func main() {
-	fmt.Println("Hello from Go!")
+	fmt.Println("Network requests")
 }
