@@ -9,36 +9,32 @@ import (
 const url = "http://services.explorecalifornia.org/json/tours.php"
 
 func main() {
+	content := ReadHttpContent()
+	fmt.Print(content)
+}
 
-	// define client using default params
-	client := http.Client{
-		Transport:     nil,
-		CheckRedirect: nil,
-		Jar:           nil,
-		Timeout:       0,
-	}
-	// Create request for the client to perform
+func ReadHttpContent() string {
+	fmt.Println("Network requests")
+	client := http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
-	// Set the User-Agent field in request header.
+	checkError(err)
+
 	req.Header.Set("User-Agent", "")
 
-	if err != nil {
-		panic(err)
-	}
-	// Perform the request and capture the response.
 	resp, err := client.Do(req)
-
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("Response type: %T\n", resp)
+	checkError(err)
 	defer resp.Body.Close()
 
+	fmt.Printf("Response type:%T\n", resp)
+
 	bytes, err := io.ReadAll(resp.Body)
+	checkError(err)
+	return string(bytes)
+
+}
+
+func checkError(err error) {
 	if err != nil {
 		panic(err)
 	}
-
-	content := string(bytes)
-	fmt.Print(content)
 }
