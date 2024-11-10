@@ -10,7 +10,7 @@ func main() {
 	fmt.Println("Network requests")
 }
 
-// checkError(err error) {
+// func checkError(err error) {
 // 	if err != nil {
 // 		panic(err)
 // 	}
