@@ -9,11 +9,11 @@ import (
 const url = "http://services.explorecalifornia.org/json/tours.php"
 
 func main() {
-	content := ReadHttpContent()
+	content := readHttpContent()
 	fmt.Print(content)
 }
 
-func ReadHttpContent() string {
+func readHttpContent() string {
 	fmt.Println("Network requests")
 	client := http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
