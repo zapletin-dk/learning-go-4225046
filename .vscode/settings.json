@@ -21,8 +21,5 @@
   "terminal.integrated.defaultProfile.linux": "zsh"
   "workbench.colorTheme": "Visual Studio Dark",
   "workbench.fontAliasing": "antialiased",
-  "workbench.statusBar.visible": true,
-  "workbench.editorAssociations": {
-    "*.md": "vscode.markdown.preview.editor"
-  }
+  "workbench.statusBar.visible": true
 }
