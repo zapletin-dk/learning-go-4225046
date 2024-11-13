@@ -36,3 +36,4 @@
 	"remoteUser": "vscode",
   	"onCreateCommand" : "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
 }
+}
